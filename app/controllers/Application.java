@@ -48,7 +48,7 @@ public class Application extends Controller {
     else {
       ContactFormData data = formData.get();
       ContactDB.addContact(data);
-      System.out.println(data.firstName + " " + data.lastName + " " + data.telephone);
+      System.out.println(data.firstName + " " + data.lastName + " " + data.telephone + " " + data.address);
       return ok(NewContact.render(formData));
     }
   }

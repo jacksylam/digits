@@ -24,6 +24,11 @@ public class ContactFormData {
   public String telephone = "";
 
   /**
+   * The address.
+   */
+  public String address = "";
+
+  /**
    * Validates the form's fields.
    *
    * @return null if valid, list of errors if there are any.
@@ -45,6 +50,14 @@ public class ContactFormData {
 
     if (telephone.length() != 12) {
       errors.add(new ValidationError("telephone", "Telephone should be xxx-xxx-xxxx"));
+    }
+
+    if (address == null || address.length() == 0) {
+      errors.add(new ValidationError("address", "Address is required."));
+    }
+
+    if (address.length() < 24) {
+      errors.add(new ValidationError("address", "Address should be at least 24 characters long."));
     }
 
     return errors.isEmpty() ? null : errors;

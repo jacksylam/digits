@@ -19,7 +19,7 @@ public class ContactDB {
    * @param formData Form data for a contact.
    */
   public static void addContact(ContactFormData formData) {
-    contacts.add(new Contact(formData.firstName, formData.lastName, formData.telephone));
+    contacts.add(new Contact(formData.firstName, formData.lastName, formData.telephone, formData.address));
   }
 
   /**
