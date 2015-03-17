@@ -32,7 +32,7 @@
       <span class="help-block">@{contactForm("telephone").error.map {error => error.message}}</span>
     </div>
     <div class="form-group @if(contactForm("address").hasErrors) {has-error}">
-      <label for="digits">Digits</label>
+      <label for="digits">Address</label>
       <input type="text" class="form-control"
       name = "@contactForm("address").name"
       id = "@contactForm("address").id"
