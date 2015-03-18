@@ -55,6 +55,12 @@ public class Application extends Controller {
     }
   }
 
+
+  /**
+   * Deletes contact
+   * @param id The ID to delete.
+   * @return The index.
+   */
   public static Result deleteContact(long id){
     System.out.println("In delete Contact.");
     ContactDB.deleteContact(id);
