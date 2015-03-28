@@ -47,15 +47,16 @@ public class IntegrationTest {
           public void invoke(TestBrowser browser) {
             browser.maximizeWindow();
             IndexPage indexPage = new IndexPage(browser.getDriver(), port);
-            NewContactPage newContactPage = new NewContactPage(browser.getDriver(), port);
-            browser.goTo(newContactPage);
-            newContactPage.isAt();
+            NewContactPage contactPage = new NewContactPage(browser.getDriver(), port);
+            browser.goTo(contactPage);
+            contactPage.isAt();
             String firstName = "Max";
             String lastName = "Smith";
             String telephone = "808-555-6666";
             String telephoneType = "Mobile";
-            newContactPage.createContact(firstName, lastName, telephone, telephoneType);
+            contactPage.createContact(firstName, lastName, telephone, telephoneType);
             browser.goTo(indexPage);
+            indexPage.isAt();
             indexPage.hasContact(firstName, lastName, telephone, telephoneType);
           }
         });
