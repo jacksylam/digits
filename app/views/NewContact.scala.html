@@ -1,6 +1,7 @@
-@(contactForm: Form[views.formdata.ContactFormData]))
-@import views.html.helper._
+@(contactForm: Form[views.formdata.ContactFormData], telephoneTypeMap: Map[String, Boolean])
+
 @import bootstrap3._
+@import helper._
 
 @Main("New Contact") {
   <div class="container">
@@ -26,8 +27,14 @@
       placeholder = "555-555-1111",
       help = "")
 
+    @bootstrap3.select(contactForm("telephoneType"),
+      label = "Telephone Type",
+      optionMap = telephoneTypeMap,
+      isMultiple = false,
+      help = "")
 
-    <button type="submit" class="btn btn-default">Submit</button>
+
+    <button id="submit" type="submit" class="btn btn-default">Submit</button>
   }
   </div>
 }

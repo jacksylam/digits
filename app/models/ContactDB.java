@@ -24,7 +24,8 @@ public class ContactDB {
    */
   public static void addContact(ContactFormData formData) {
     long idValue = (formData.id == 0) ? currentID++ : formData.id;
-    Contact contact = new Contact(idValue, formData.firstName, formData.lastName, formData.telephone);
+    Contact contact = new Contact(idValue, formData.firstName, formData.lastName, formData.telephone,
+        formData.telephoneType);
     contacts.put(idValue, contact);
   }
 
