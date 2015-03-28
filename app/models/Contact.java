@@ -9,6 +9,7 @@ public class Contact {
   private String lastName;
   private String telephone;
   private long id;
+  private String telephoneType;
 
 
   /**
@@ -18,12 +19,14 @@ public class Contact {
    * @param firstName The first name.
    * @param lastName  The second name.
    * @param telephone The telephone number.
+   * @param telephoneType The telephone type.
    */
-  public Contact(long id, String firstName, String lastName, String telephone) {
+  public Contact(long id, String firstName, String lastName, String telephone, String telephoneType) {
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
     this.telephone = telephone;
+    this.telephoneType = telephoneType;
   }
 
   /**
@@ -45,6 +48,17 @@ public class Contact {
   }
 
   /**
+   * Gets telephone type.
+   *
+   * @return Telephone type.
+   */
+  public String getTelephoneType() {
+    return telephoneType;
+  }
+
+
+
+  /**
    * Gets telephone number.
    *
    * @return Telephone number.
@@ -52,7 +66,6 @@ public class Contact {
   public String getTelephone() {
     return telephone;
   }
-
   /**
    * Gets the id.
    *

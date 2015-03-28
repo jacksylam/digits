@@ -50,12 +50,13 @@ public class IntegrationTest {
             NewContactPage newContactPage = new NewContactPage(browser.getDriver(), port);
             browser.goTo(newContactPage);
             newContactPage.isAt();
-            String firstName = "Bob";
+            String firstName = "Max";
             String lastName = "Smith";
             String telephone = "808-555-6666";
-            newContactPage.createContact(firstName, lastName, telephone);
+            String telephoneType = "Mobile";
+            newContactPage.createContact(firstName, lastName, telephone, telephoneType);
             browser.goTo(indexPage);
-            indexPage.hasContact(firstName, lastName, telephone);
+            indexPage.hasContact(firstName, lastName, telephone, telephoneType);
           }
         });
   }
