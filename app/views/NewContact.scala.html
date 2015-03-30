@@ -21,17 +21,11 @@
       label = "Last",
       placeholder = "Last name",
       help = "")
-
-    @text(contactForm("telephone"),
-      label = "Digits",
-      placeholder = "555-555-1111",
-      help = "")
-
-    @bootstrap3.select(contactForm("telephoneType"),
-      label = "Telephone Type",
-      optionMap = telephoneTypeMap,
+    
+    @telephone(contactForm("telephone"),
+      contactForm("telephoneType"),
       isMultiple = false,
-      help = "")
+      optionMap = telephoneTypeMap)
 
 
     <button id="submit" type="submit" class="btn btn-default">Submit</button>
