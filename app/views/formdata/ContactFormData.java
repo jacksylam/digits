@@ -55,6 +55,22 @@ public class ContactFormData {
   }
 
   /**
+   * Creates a contact given the first name, last name, telephone number, and telephone type.
+   * Method used only for testing.
+   * @param firstName The first name.
+   * @param lastName The last name.
+   * @param telephone The telephone number.
+   * @param telephoneType The telephone type.
+   */
+  public ContactFormData(String firstName, String lastName, String telephone, String telephoneType) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.telephone = telephone;
+    this.telephoneType = telephoneType;
+  }
+
+
+  /**
    * Validates the form's fields.
    *
    * @return null if valid, list of errors if there are any.
