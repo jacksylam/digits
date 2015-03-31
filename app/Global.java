@@ -4,6 +4,7 @@ import views.formdata.ContactFormData;
 import play.Application;
 
 /**
+ * Initializes application with four contacts.
  * Created by Jack on 3/30/2015.
  */
 public class Global extends GlobalSettings {
