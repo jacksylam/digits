@@ -55,6 +55,21 @@ public class ContactFormData {
   }
 
   /**
+   * Creates a model of a contact without the id. Method used for testing purposes.
+   *
+   * @param firstName     The first name.
+   * @param lastName      the last name.
+   * @param telephone     The telephone number.
+   * @param telephoneType The telephone type.
+   */
+  public ContactFormData(String firstName, String lastName, String telephone, String telephoneType) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.telephone = telephone;
+    this.telephoneType = telephoneType;
+  }
+
+  /**
    * Validates the form's fields.
    *
    * @return null if valid, list of errors if there are any.

@@ -15,10 +15,10 @@ public class Contact {
   /**
    * Creates a model of a contact.
    *
-   * @param id        The id.
-   * @param firstName The first name.
-   * @param lastName  The second name.
-   * @param telephone The telephone number.
+   * @param id            The id.
+   * @param firstName     The first name.
+   * @param lastName      The second name.
+   * @param telephone     The telephone number.
    * @param telephoneType The telephone type.
    */
   public Contact(long id, String firstName, String lastName, String telephone, String telephoneType) {
@@ -57,7 +57,6 @@ public class Contact {
   }
 
 
-
   /**
    * Gets telephone number.
    *
@@ -66,6 +65,7 @@ public class Contact {
   public String getTelephone() {
     return telephone;
   }
+
   /**
    * Gets the id.
    *
