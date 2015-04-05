@@ -11,7 +11,7 @@ public class Global extends GlobalSettings {
 
 
   @Override
-  public void onStart(Application application) {
+    public void onStart(Application application) {
     super.onStart(application);
     ContactDB.addContact(new ContactFormData("Max", "Smith", "555-555-1111", "Mobile"));
     ContactDB.addContact(new ContactFormData("Bob", "Smith", "555-555-2222", "Home"));
