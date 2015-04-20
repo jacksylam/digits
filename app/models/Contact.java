@@ -15,8 +15,6 @@ public class Contact {
   private List<String> dietTypes;
 
 
-
-
   /**
    * Creates a model of a contact.
    *
@@ -26,9 +24,9 @@ public class Contact {
    * @param telephone     The telephone number.
    * @param telephoneType The telephone type.
    * @param dietTypes     The diet types.
-
    */
-  public Contact(long id, String firstName, String lastName, String telephone, String telephoneType, List<String> dietTypes) {
+  public Contact(long id, String firstName, String lastName, String telephone,
+                 String telephoneType, List<String> dietTypes) {
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
@@ -85,9 +83,29 @@ public class Contact {
 
   /**
    * Gets the diet types.
+   *
    * @return The diet types.
    */
   public List<String> getDietTypes() {
     return dietTypes;
+  }
+
+
+  /**
+   * Gets the diet types as a string.
+   *
+   * @return The diet types as a string.
+   */
+  public String getDietTypesString() {
+    String diets = "";
+    for (String diet : dietTypes) {
+      diets += diet + ",";
+    }
+    if (diets.length() == 0) {
+      return diets;
+    }
+    else {
+      return diets.substring(0, diets.length() - 1);
+    }
   }
 }

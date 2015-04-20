@@ -11,11 +11,7 @@
           <td>@contact.getLastName()</td>
           <td>@contact.getTelephone()</td>
           <td>@contact.getTelephoneType()</td>
-          <td>
-          @for(dietType <- contact.getDietTypes){
-            @dietType.toString(),
-          }
-          </td>
+          <td>@contact.getDietTypesString()</td>
           <td><a href="@routes.Application.newContact(contact.getId)">Edit</a></td>
         </tr>
       }
