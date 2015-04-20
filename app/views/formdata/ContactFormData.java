@@ -30,6 +30,11 @@ public class ContactFormData {
   public String telephoneType = "";
 
   /**
+   * The diet types.
+   */
+  public List<String> dietTypes = new ArrayList<String>();
+
+  /**
    * The id.
    */
   public long id;
@@ -51,6 +56,7 @@ public class ContactFormData {
     this.lastName = contact.getLastName();
     this.telephone = contact.getTelephone();
     this.telephoneType = contact.getTelephoneType();
+    this.dietTypes = contact.getDietTypes();
     this.id = contact.getId();
   }
 
@@ -95,6 +101,10 @@ public class ContactFormData {
 
     if (!TelephoneTypes.isType(telephoneType)) {
       errors.add(new ValidationError("telephoneType", "Telephone type is invalid."));
+    }
+
+    if (dietTypes.size() > 5) {
+      errors.add(new ValidationError("dietTypes", "Too much diet types."));
     }
 
     return errors.isEmpty() ? null : errors;

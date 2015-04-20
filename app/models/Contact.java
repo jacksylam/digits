@@ -1,5 +1,7 @@
 package models;
 
+import java.util.List;
+
 /**
  * Model for contacts.
  * Created by Jack on 3/14/2015.
@@ -10,6 +12,9 @@ public class Contact {
   private String telephone;
   private long id;
   private String telephoneType;
+  private List<String> dietTypes;
+
+
 
 
   /**
@@ -20,13 +25,16 @@ public class Contact {
    * @param lastName      The second name.
    * @param telephone     The telephone number.
    * @param telephoneType The telephone type.
+   * @param dietTypes     The diet types.
+
    */
-  public Contact(long id, String firstName, String lastName, String telephone, String telephoneType) {
+  public Contact(long id, String firstName, String lastName, String telephone, String telephoneType, List<String> dietTypes) {
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
     this.telephone = telephone;
     this.telephoneType = telephoneType;
+    this.dietTypes = dietTypes;
   }
 
   /**
@@ -73,5 +81,13 @@ public class Contact {
    */
   public long getId() {
     return id;
+  }
+
+  /**
+   * Gets the diet types.
+   * @return The diet types.
+   */
+  public List<String> getDietTypes() {
+    return dietTypes;
   }
 }
