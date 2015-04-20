@@ -103,8 +103,12 @@ public class ContactFormData {
       errors.add(new ValidationError("telephoneType", "Telephone type is invalid."));
     }
 
-    if (dietTypes.size() > 5) {
-      errors.add(new ValidationError("dietTypes", "Too much diet types."));
+    if (dietTypes != null) {
+      for(String diet : dietTypes) {
+        if(!DietTypes.isType(diet)) {
+          errors.add(new ValidationError("dietTypes", "Invalid diet type."));
+        }
+      }
     }
 
     return errors.isEmpty() ? null : errors;
