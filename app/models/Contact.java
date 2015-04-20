@@ -1,5 +1,6 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -11,8 +12,8 @@ public class Contact {
   private String lastName;
   private String telephone;
   private long id;
-  private String telephoneType;
-  private List<String> dietTypes;
+  private TelephoneType telephoneType;
+  private List<DietType> dietTypes;
 
 
   /**
@@ -26,7 +27,7 @@ public class Contact {
    * @param dietTypes     The diet types.
    */
   public Contact(long id, String firstName, String lastName, String telephone,
-                 String telephoneType, List<String> dietTypes) {
+                 TelephoneType telephoneType, List<DietType> dietTypes) {
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
@@ -58,7 +59,7 @@ public class Contact {
    *
    * @return Telephone type.
    */
-  public String getTelephoneType() {
+  public TelephoneType getTelephoneType() {
     return telephoneType;
   }
 
@@ -86,7 +87,7 @@ public class Contact {
    *
    * @return The diet types.
    */
-  public List<String> getDietTypes() {
+  public List<DietType> getDietTypes() {
     return dietTypes;
   }
 
@@ -98,8 +99,8 @@ public class Contact {
    */
   public String getDietTypesString() {
     String diets = "";
-    for (String diet : dietTypes) {
-      diets += diet + ",";
+    for (DietType diet : dietTypes) {
+      diets += diet.getDietType() + ",";
     }
     if (diets.length() == 0) {
       return diets;
@@ -107,5 +108,71 @@ public class Contact {
     else {
       return diets.substring(0, diets.length() - 1);
     }
+  }
+
+  /**
+   * Sets the first name.
+   *
+   * @param firstName The first name.
+   */
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
+
+  /**
+   * Sets the last name.
+   *
+   * @param lastName The last name.
+   */
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
+  }
+
+  /**
+   * Sets the telephone.
+   *
+   * @param telephone The telephone.
+   */
+  public void setTelephone(String telephone) {
+    this.telephone = telephone;
+  }
+
+  /**
+   * Sets the id.
+   *
+   * @param id the id.
+   */
+  public void setId(long id) {
+    this.id = id;
+  }
+
+  /**
+   * Sets the telephone type.
+   *
+   * @param telephoneType The telephone type.
+   */
+  public void setTelephoneType(TelephoneType telephoneType) {
+    this.telephoneType = telephoneType;
+  }
+
+  /**
+   * Sets the diet types.
+   *
+   * @param dietTypes The diet types.
+   */
+  public void setDietTypes(List<DietType> dietTypes) {
+    this.dietTypes = dietTypes;
+  }
+
+  /**
+   * Returns a list of diet types strings for this contact.
+   * @return The list of diet type strings.
+   */
+  public List<String> getDietTypesList() {
+    List<String> dietList = new ArrayList<>();
+    for (DietType dietType : this.dietTypes) {
+      dietList.add(dietType.getDietType());
+    }
+    return dietList;
   }
 }

@@ -55,9 +55,9 @@ public class ContactFormData {
     this.firstName = contact.getFirstName();
     this.lastName = contact.getLastName();
     this.telephone = contact.getTelephone();
-    this.telephoneType = contact.getTelephoneType();
-    this.dietTypes = contact.getDietTypes();
+    this.telephoneType = contact.getTelephoneType().getTelephoneType();
     this.id = contact.getId();
+    this.dietTypes = contact.getDietTypesList();
   }
 
   /**
