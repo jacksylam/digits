@@ -1,5 +1,10 @@
 package models;
 
+import play.db.ebean.Model;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,9 +12,13 @@ import java.util.List;
  * A model for telephone type.
  * Created by Jack on 4/19/2015.
  */
-public class TelephoneType {
+@Entity
+public class TelephoneType extends Model {
+  @Id
   private long id;
   private String telephoneType;
+
+  @OneToMany(mappedBy = "telephoneType")
   private List<Contact> contacts = new ArrayList<>();
 
   /**
@@ -68,6 +77,7 @@ public class TelephoneType {
 
   /**
    * Adds new contact to telephone types.
+   *
    * @param contact The contact.
    */
   public void addContact(Contact contact) {
@@ -76,9 +86,19 @@ public class TelephoneType {
 
   /**
    * Constructs a new telephone type.
+   *
    * @param telephoneType The telephone type.
    */
   public TelephoneType(String telephoneType) {
     this.telephoneType = telephoneType;
+  }
+
+  /**
+   * The EBean ORM finder method for database queries.
+   *
+   * @return The finder method.
+   */
+  public static Finder<Long, TelephoneType> find() {
+    return new Finder<Long, TelephoneType>(Long.class, TelephoneType.class);
   }
 }

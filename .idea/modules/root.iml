@@ -151,5 +151,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="SBT: org.postgresql:postgresql:9.3-1102-jdbc4:jar" level="project" />
   </component>
 </module>

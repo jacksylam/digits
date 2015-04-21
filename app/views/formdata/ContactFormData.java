@@ -67,12 +67,15 @@ public class ContactFormData {
    * @param lastName      the last name.
    * @param telephone     The telephone number.
    * @param telephoneType The telephone type.
+   * @param dietTypes     The diet types.
    */
-  public ContactFormData(String firstName, String lastName, String telephone, String telephoneType) {
+  public ContactFormData(String firstName, String lastName, String telephone,
+                         String telephoneType, List<String> dietTypes) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.telephone = telephone;
     this.telephoneType = telephoneType;
+    this.dietTypes = dietTypes;
   }
 
   /**
@@ -104,8 +107,8 @@ public class ContactFormData {
     }
 
     if (dietTypes != null) {
-      for(String diet : dietTypes) {
-        if(!DietTypes.isType(diet)) {
+      for (String diet : dietTypes) {
+        if (!DietTypes.isType(diet)) {
           errors.add(new ValidationError("dietTypes", "Invalid diet type."));
         }
       }
